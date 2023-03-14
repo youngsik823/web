@@ -84,7 +84,7 @@ header .gnb {
     box-sizing: border-box;
 
     position: fixed;
-    right: -100%; /* transiton을 이용해서 메뉴창을 슬라이드처러 옮김*/
+    right: -100%; /* transiton을 이용해서 메뉴창을 슬라이드처럼 옮김*/
     top: 0;
     height: 100vh;
 
@@ -174,6 +174,7 @@ section.contents .main-text {
     font-size: 25px;
 
     display: flex;
+    position: relative;
 }
 section.contents .main-text h3 {
     /* background: red; */
@@ -193,9 +194,182 @@ section.contents .main-text p span {
     color: #999;
     margin-top: 30px;
 }
+section.contents .main-text::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffec03;
+    position: absolute;
+    left: 70px;
+    top: 100px;
+}
+section.contents .main-text::after {
+    content: '”';
+    font-size: 300px;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+}
+/* > .project */
+section.contents .project .top {
+    /* background: tomato; */
+    width: 80%;
+    margin: 200px auto 60px;
 
+    display: flex;
+    justify-content: space-between;
+}
+section.contents .project .top h3 {
+    /* background: red; */
+    font-size: 35px;
+    font-weight: 700;
+}
+section.contents .project .top a {
+    /* background: blue; */
+    font-size: 18px;
+}
+section.contents .project ul {
+    /* background: tomato; */
+    display: flex;
+    justify-content: space-evenly;
+    /* 알아서 나눠줘 */
+}
+section.contents .project ul li {
+    width: 24%;
+    border: 4px solid #fff;
+    box-sizing: border-box;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
 
+section.contents .project ul li a::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: rgba(27, 27, 27, .9);
+    position: absolute;
+    transition: 0.6s;
+}
 
+section.contents .project ul li a:hover::before {
+    width: 100%;
+}
+
+section.contents .project ul li a img {
+    width: 100%;
+}
+section.contents .project ul li a .name {
+    background: #1b1b1b;
+    font-size: 22px;
+    text-align: right;
+    width: 250px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    opacity: 0;
+    
+}
+section.contents .project ul li a:hover .name {
+    animation: show-name 1s forwards;
+    /* 기존위치로 못돌아가게 forwards(both)를 쓴다 */
+}
+@keyframes show-name {
+    from {
+        opacity: 0;
+        bottom: -30px;
+    }
+    to {
+        opacity: 1;
+        bottom: 10px;
+    }
+    
+}
+/*  > .partner */
+section.contents  .partner {
+    width: 65%;
+    margin: 170px auto 100px;
+}
+section.contents  .partner h3 {
+    font-size: 17px;
+    margin-bottom: 80px;
+}
+
+section.contents  .partner ul {
+    /* background: red; */
+    display: flex;
+    flex-wrap: wrap; 
+    /* wrap으로 풀어줘야 box가 밑으로 떨어진다 */
+}
+section.contents  .partner ul li {
+    width: 25%;
+    /* border: 4px solid #fff; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+section.contents .partner ul li img {
+    opacity: 0.3;
+    transition: 0.3s;
+}
+section.contents .partner ul li img:hover {
+    opacity: 1;
+}
+
+/* contact style */
+section.contents .contact {
+    width: 90%;
+    background: url('../img/contact.jpg') no-repeat center/cover fixed;
+    padding: 220px 0;
+}
+section.contents .contact .inner {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.4;
+}
+section.contents .contact .inner .tel {
+    font-size: 55px;
+    font-weight: 700;
+    margin: 50px 0;
+}
+
+/* footer */
+footer {
+    background: #1b1b1b;
+    color: #999;
+    padding: 0 80px 80px;
+}
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer ul li:nth-child(2) {
+    color: #eee;
+    font-size: 16px;
+    line-height: 2;
+}
+footer ul li:nth-child(2) span {
+    font-weight: 700;
+    margin-right: 10px;
+    color: #999;
+}
+
+footer .go-top {
+    color: #fff;
+    font-size: 50px;
+    position: fixed;
+    right: 50px;
+    bottom: 60px;
+}
 
 
 
