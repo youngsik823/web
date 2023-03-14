@@ -22,3 +22,55 @@ input {
 }
 
 /* header style */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+header .inner-header {
+    /* background: orange; */
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    /* 부모에게 flex */
+    justify-content: space-between;
+    align-items: center;
+    /* 중앙으로 이동하기 */
+    font-weight: 700;
+    color: #fff;
+}
+header .inner-header .logo {
+    /* background: tomato; */
+    flex: 1; /* 비율설정 */
+}
+header .inner-header .logo a {
+    display: block;
+    width: 100%;
+}
+header .inner-header .logo a img {
+    height: 60px;
+}
+
+header .inner-header .intro-text {
+    /* background: greenyellow; */
+    flex: 4;
+    margin-left: 40px;
+    text-transform: uppercase;
+    /* 대소문자 변환 */
+}
+header .inner-header .menu-open {
+    background: skyblue;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    align-items: center;
+    /* 교차 축 센터*/
+}
+header .inner-header .menu-open .lnr-menu {
+    font-size: 33px;
+    margin-left: 15px;
+}
+
